@@ -6,6 +6,7 @@ import os
 
 # types
 
+
 def show_types():
     intgr = 4
     print(intgr, type(intgr))
@@ -22,7 +23,6 @@ def show_types():
     print('')
 
 
-
 # input
 
 def show_input():
@@ -30,14 +30,13 @@ def show_input():
     print(f'input from user: {from_user}')
 
 
-
 def calc_age():
     age_input = input('How old are you?\n')
-    
+
     # doesnt work cause age_input is always initially a string
     # if type(age_input) != int:
     #     raise Exception('Age should be an integer!')
-    
+
     age = None
     try:
         age = int(age_input)
@@ -54,7 +53,6 @@ def calc_age():
     print('')
 
 
-
 def between():
     nmbr = int(input('number please!\n'))
     if nmbr < 100 and nmbr > 10:
@@ -63,8 +61,7 @@ def between():
         print('Fascinating number!')
 
 
-
-#lists and dicts
+# lists and dicts
 
 def lists():
     l = ['thing', 'not thing']
@@ -91,12 +88,11 @@ def lists():
     print('')
 
 
-
 def dicts(just_an_arg):
     d = {'k1': 'v1',
-        'k2': 'v2',
-        'k3': 'v3'}
-    
+         'k2': 'v2',
+         'k3': 'v3'}
+
     print(f'function arg: {just_an_arg}')
     print(f'dict value 1: {d["k1"]}, {d.get("k1")}')
 
@@ -107,8 +103,7 @@ def dicts(just_an_arg):
     print('')
 
 
-
-#classes
+# classes
 
 class Dog:
     def __init__(self, name: str, breed: str) -> None:
@@ -117,6 +112,7 @@ class Dog:
 
     def count_legs(self) -> int:
         return 4
+
 
 class Robot_Dog(Dog):
     def __init__(self, name: str, breed: str, voltage: int) -> None:
@@ -129,6 +125,7 @@ class Robot_Dog(Dog):
     def count_legs(self) -> int:
         return super().count_legs() * 2
 
+
 def dog_example():
     dog = Robot_Dog('RoboDog', 'RoboDogBreed', 400)
 
@@ -137,7 +134,6 @@ def dog_example():
     print(dog.count_legs())
 
     print('')
-
 
 
 # file management
@@ -162,11 +158,10 @@ def rd_file() -> None:
     print('')
 
 
-
-def wrt_file(): 
-    with open('input_file_write.txt', 'a') as f: # 'a' is for "append", 'w' would be for "write", it replaces contents
+def wrt_file():
+    # 'a' is for "append", 'w' would be for "write", it replaces contents
+    with open('input_file_write.txt', 'a') as f:
         f.write('new line in file!\n')
-
 
 
 def misc_file():
@@ -180,19 +175,19 @@ def misc_file():
         print('all from path:', result)
 
 
-
 def main():
     show_types()
-    #show_input()
-    #calc_age()
-    #between()
+    # show_input()
+    # calc_age()
+    # between()
     lists()
     dict_arg: str = None
     dicts(dict_arg)
     dog_example()
     rd_file()
-    #wrt_file()
+    # wrt_file()
     misc_file()
+
 
 if __name__ == '__main__':
     main()
